@@ -3,6 +3,8 @@ window.onload = function() {
     const tbody = document.getElementById("tbody");
 
     populateTable()
+    let newcourseBtn = document.getElementById("newcourseBtn")
+    newcourseBtn.onclick = newcourseBtnClick 
 }
 
 
@@ -29,7 +31,7 @@ function populateTable(){
             td3.innerHTML = courses[i].courseName
 
             let anchor = document.createElement("a");
-            anchor.href = `http://127.0.0.1:5500/details.html?courseid=${courses[i].id}`;
+            anchor.href = `http://127.0.0.1:5501/details.html?courseid=${courses[i].id}`;
             anchor.text = "See details"; 
 
             tr.appendChild(td1);
@@ -41,4 +43,8 @@ function populateTable(){
 
     })
 
+}
+
+function newcourseBtnClick(){
+    window.location.href = 'new-courses.html'
 }
